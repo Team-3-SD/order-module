@@ -1,0 +1,15 @@
+{
+	"configuracion":
+	{
+		"version": "1.0.0",
+		"database": {
+			"ip" : "localhost",
+			"port": "3306",
+			"db" : "dbpurchase",
+			"type": "mysql",
+			"username": "team3",
+			"password": "RooT1234-T",
+			"driver": "com.mysql.jdbc.Driver"
+		}
+	}
+}
