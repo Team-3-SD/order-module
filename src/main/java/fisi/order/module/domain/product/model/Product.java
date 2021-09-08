@@ -7,17 +7,28 @@ public class Product {
     private String brand;
     private double price;
     private String image;
+    private int stock;
+    private String description;
+    private int state;
 
-    public Product(int id, String name, String brand, double price, String image) {
+    public Product(int id, String name, String brand, double price,
+                   String image, int stock, String description, int state) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.brand = brand;
         this.image = image;
+        this.stock = stock;
+        this.description = description;
+        this.state = state;
     }
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -36,6 +47,18 @@ public class Product {
         return image;
     }
 
+    public int getStock() {
+        return stock;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public int getState() {
+        return state;
+    }
+
     public static ProductBuilder builder() {
         return new ProductBuilder();
     }
@@ -46,6 +69,9 @@ public class Product {
         private String brand;
         private double price;
         private String image;
+        private int stock;
+        private String description;
+        private int state;
 
         public ProductBuilder id(int id) {
             this.id = id;
@@ -72,8 +98,24 @@ public class Product {
             return this;
         }
 
+        public ProductBuilder stock(int stock) {
+            this.stock = stock;
+            return this;
+        }
+
+        public ProductBuilder description(String description) {
+            this.description = description;
+            return this;
+        }
+
+        public ProductBuilder state(int state) {
+            this.state = state;
+            return this;
+        }
+
         public Product build() {
-            return new Product(id, name, brand, price, image);
+            return new Product(id, name, brand, price,
+                    image, stock, description, state);
         }
 
     }
